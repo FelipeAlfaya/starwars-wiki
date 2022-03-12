@@ -1,0 +1,38 @@
+<div
+  id="header"
+  class="p-6 shadow-lg flex justify-between bg-white items-center"
+>
+  <div id="logo" class="flex-shrink-0 flex items-center">
+    <img
+      class="block w-auto"
+      src="assets/icons/swiki-logo.svg"
+      alt="swiki-logo"
+    />
+  </div>
+  <nav id="navbar" class="">
+    <div class="flex space-x-4">
+      <ng-template
+        href=""
+        *ngFor="
+          let link of [
+            { text: 'personagens', path: 'characters' },
+            { text: 'planetas', path: 'planets' },
+            { text: 'espécies', path: 'species'},
+            { text: 'filmes', path: 'films'},
+            { text: 'veículos', path: 'vehicles'},
+            { text: 'espaçonaves', path: 'starships'}
+          ]
+        "
+      >
+      <a>{{link.text}}</a>
+    </ng-template>
+    </div>
+  </nav>
+  <div id="wookie-api-logo" class="flex-shrink-0 flex items-center">
+    <img
+      class="block w-auto"
+      src="assets/icons/wookieapi-logo.svg"
+      alt="wookie-api-logo"
+    />
+  </div>
+</div>
