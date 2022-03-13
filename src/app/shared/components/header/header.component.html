@@ -1,38 +1,37 @@
-<div
-  id="header"
-  class="p-6 shadow-lg flex justify-between bg-white items-center"
->
-  <div id="logo" class="flex-shrink-0 flex items-center">
-    <img
-      class="block w-auto"
-      src="assets/icons/swiki-logo.svg"
-      alt="swiki-logo"
-    />
-  </div>
-  <nav id="navbar" class="">
-    <div class="flex space-x-4">
-      <ng-template
-        href=""
-        *ngFor="
-          let link of [
-            { text: 'personagens', path: 'characters' },
-            { text: 'planetas', path: 'planets' },
-            { text: 'espécies', path: 'species'},
-            { text: 'filmes', path: 'films'},
-            { text: 'veículos', path: 'vehicles'},
-            { text: 'espaçonaves', path: 'starships'}
-          ]
-        "
-      >
-      <a>{{link.text}}</a>
-    </ng-template>
+<div id="header" class="p-6 shadow-lg block w-auto mb-6">
+  <div
+    id="container"
+    class="flex justify-start bg-white items-center w-full max-w-7xl mx-auto"
+  >
+    <div id="logo" class="flex-shrink-0 flex items-center">
+      <a [routerLink]="''">
+        <img
+          class="block w-auto mr-6"
+          src="assets/icons/swiki-logo.svg"
+          alt="swiki-logo"
+        />
+      </a>
     </div>
-  </nav>
-  <div id="wookie-api-logo" class="flex-shrink-0 flex items-center">
-    <img
-      class="block w-auto"
-      src="assets/icons/wookieapi-logo.svg"
-      alt="wookie-api-logo"
-    />
+    <nav id="navbar" class="flex-1">
+      <div class="flex space-x-4">
+        <ng-template ngFor let-link [ngForOf]="navlinks">
+          <a
+            [routerLink]="link.path"
+            class="capitalize text-gray-800 hover:bg-gray-200 transition-all px-3 py-2 rounded-md text-lg font-medium"
+            [ngClass]="{ 'bg-gray-200': currentRoute === '/' + link.path }"
+            >{{ link.text }}</a
+          >
+        </ng-template>
+      </div>
+    </nav>
+    <div id="wookie-api-logo" class="flex-shrink-0 flex items-center ml-6">
+      <a href="https://wookieapi.vercel.app" target="_blank">
+        <img
+          class="block w-auto"
+          src="assets/icons/wookieapi-logo.svg"
+          alt="wookie-api-logo"
+        />
+      </a>
+    </div>
   </div>
 </div>
