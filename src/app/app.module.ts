@@ -11,6 +11,8 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { SpeciesComponent } from './species/species.component';
 import { FilmsComponent } from './films/films.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { FilmsComponent } from './films/films.component';
     VehiclesComponent,
     StarshipsComponent,
     SpeciesComponent,
-    FilmsComponent
+    FilmsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
-  ],  
+    SharedModule,
+    HttpClientModule,
+    SwiperModule,
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

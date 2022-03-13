@@ -1,11 +1,23 @@
 :host {
-  #wookie-api-logo {
-    img {
-      border-radius: 0.5rem;
+  #header {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
+
+    #navbar a {
       transition: all 0.2s ease-out;
 
       &:hover {
         box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+    #wookie-api-logo {
+      img {
+        border-radius: 0.5rem;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+        }
       }
     }
   }

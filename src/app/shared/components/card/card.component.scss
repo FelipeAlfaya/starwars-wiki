@@ -1,0 +1,49 @@
+:host {
+  .card {
+    transition: all 0.2s ease-out;
+
+    .arrow {
+      opacity: 0;
+      img {
+        transition: all 0.2s ease-out;
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.5rem black);
+      }
+    }
+
+    .image,
+    .arrow,
+    .name,
+    .expanded-info {
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover > .name {
+      opacity: 0;
+    }
+
+    &:hover > .arrow {
+      opacity: 100%;
+    }
+
+    &.expanded {
+      .image-shadow {
+        opacity: 100%;
+      }
+
+      .image {
+        filter: blur(5px);
+      }
+
+      .arrow {
+        img {
+          transform: rotate(180deg);
+        }
+      }
+
+      .expanded-info {
+        opacity: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div
+  [id]="'card--' + removeWhitespaces(data?.name!)"
+  class="card w-52 h-72 bg-gray-400 flex rounded-lg overflow-hidden relative"
+  (mouseleave)="shrinkInformations()"
+>
+  <div
+    class="image-shadow absolute opacity-0 w-full h-full top-0 bg-black bg-opacity-40 z-10"
+  ></div>
+  <div
+    class="image w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover bg-center"
+    [style.backgroundImage]="'url(' + data?.image + ')'"
+  ></div>
+  <div
+    class="name w-full h-12 items-center justify-center flex absolute bottom-0 opacity-100 bg-black bg-opacity-50"
+  >
+    <p class="text-white">{{ data?.name }}</p>
+  </div>
+  <div
+    class="arrow absolute bottom-0 w-full flex justify-center items-center h-12"
+  >
+    <img
+      src="assets/icons/arrow-up.svg"
+      alt=""
+      class="w-auto h-auto z-50"
+      (click)="expandInformations()"
+    />
+  </div>
+  <div class="expanded-info absolute opacity-0 w-full h-full p-4 z-30 text-sm">
+    <div *ngIf="character">
+      <div class="info flex text-blue-400 flex-wrap">
+        <p class="mr-2">Nome:</p>
+        <span class="text-white">{{ data?.name }}</span>
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Altura:</p>
+        <span class="text-white">{{ character?.height }}m</span>
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Peso:</p>
+        <span class="text-white">{{ character?.mass }}kg</span>
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Nascimento:</p>
+        <span class="text-white">{{ character?.birth_year }}</span>
+      </div>
+    </div>
+    <div *ngIf="planet">
+      <div class="info flex text-blue-400 flex-wrap">
+        <p class="mr-2">Nome:</p>
+        <span class="text-white">{{ planet?.name }}</span>
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Rotação:</p>
+        <span class="text-white">{{ planet?.rotation_period }} horas</span>
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Translação:</p>
+        <span class="text-white"
+          >{{ planet?.orbital_period!.replace(" thousand", "") }} dias</span
+        >
+      </div>
+      <div class="info flex text-blue-400">
+        <p class="mr-2">Diâmetro:</p>
+        <span class="text-white"
+          >{{
+            renderValue(planet?.diameter!.replace(" thousand", ""))
+          }}
+          km</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

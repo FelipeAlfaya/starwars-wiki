@@ -1,7 +1,7 @@
-<div id="header" class="p-6 shadow-lg block w-auto mb-6">
+<div id="header" class="py-6 block w-full">
   <div
     id="container"
-    class="flex justify-start bg-white items-center w-full max-w-7xl mx-auto"
+    class="flex justify-start bg-white items-center w-full max-w-7xl mx-auto px-3"
   >
     <div id="logo" class="flex-shrink-0 flex items-center">
       <a [routerLink]="''">
@@ -17,11 +17,17 @@
         <ng-template ngFor let-link [ngForOf]="navlinks">
           <a
             [routerLink]="link.path"
-            class="capitalize text-gray-800 hover:bg-gray-200 transition-all px-3 py-2 rounded-md text-lg font-medium"
+            class="capitalize text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-lg font-medium"
             [ngClass]="{ 'bg-gray-200': currentRoute === '/' + link.path }"
             >{{ link.text }}</a
           >
         </ng-template>
+        <a
+          href="https://github.com/lukearch"
+          target="_blank"
+          class="capitalize text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-lg font-medium"
+          >Github</a
+        >
       </div>
     </nav>
     <div id="wookie-api-logo" class="flex-shrink-0 flex items-center ml-6">
