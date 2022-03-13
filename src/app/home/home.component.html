@@ -1,4 +1,4 @@
-<div id="container" class="max-w-7xl mx-auto px-3">
+<div id="container" class="max-w-7xl mx-auto px-3 flex flex-col">
   <h1 class="text-5xl font-extrabold text-gray-800 antialiased">
     Seja bem-vindo à Star Wiki!
   </h1>
@@ -45,5 +45,11 @@
         <app-card [data]="planet" [id]="i"></app-card>
       </ng-template>
     </swiper>
+  </div>
+  <div class="my-6 h-64">
+    <div
+      class="w-full h-full bg-center bg-no-repeat bg-cover"
+      [style.backgroundImage]="'url(assets/bg/bg-2.jpg)'"
+    ></div>
   </div>
 </div>

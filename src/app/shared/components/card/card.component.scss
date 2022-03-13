@@ -27,6 +27,9 @@
     }
 
     &.expanded {
+      button {
+        transition: all 0.2s ease-out;
+      }
       .image-shadow {
         opacity: 100%;
       }

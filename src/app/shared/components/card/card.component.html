@@ -25,49 +25,15 @@
       (click)="expandInformations()"
     />
   </div>
-  <div class="expanded-info absolute opacity-0 w-full h-full p-4 z-30 text-sm">
-    <div *ngIf="character">
-      <div class="info flex text-blue-400 flex-wrap">
-        <p class="mr-2">Nome:</p>
-        <span class="text-white">{{ data?.name }}</span>
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Altura:</p>
-        <span class="text-white">{{ character?.height }}m</span>
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Peso:</p>
-        <span class="text-white">{{ character?.mass }}kg</span>
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Nascimento:</p>
-        <span class="text-white">{{ character?.birth_year }}</span>
-      </div>
-    </div>
-    <div *ngIf="planet">
-      <div class="info flex text-blue-400 flex-wrap">
-        <p class="mr-2">Nome:</p>
-        <span class="text-white">{{ planet?.name }}</span>
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Rotação:</p>
-        <span class="text-white">{{ planet?.rotation_period }} horas</span>
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Translação:</p>
-        <span class="text-white"
-          >{{ planet?.orbital_period!.replace(" thousand", "") }} dias</span
-        >
-      </div>
-      <div class="info flex text-blue-400">
-        <p class="mr-2">Diâmetro:</p>
-        <span class="text-white"
-          >{{
-            renderValue(planet?.diameter!.replace(" thousand", ""))
-          }}
-          km</span
-        >
-      </div>
+  <div
+    class="expanded-info absolute opacity-0 w-full h-full p-4 pb-16 z-30 text-sm"
+  >
+    <div class="w-full h-full relative">
+      <button
+        class="w-full bg-blue-400 text-white absolute bottom-0 p-2 rounded-sm hover:bg-blue-500"
+      >
+        Ver mais
+      </button>
     </div>
   </div>
 </div>
