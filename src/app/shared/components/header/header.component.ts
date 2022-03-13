@@ -1,24 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { NavigationEnd, Router } from '@angular/router';
 import Navlink from '../../interfaces/navlink';
->>>>>>> 64a8768d9115ed025824798bdc162b80182e3c44
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-<<<<<<< HEAD
-  styleUrls: ['./header.component.scss']
-})
-export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-=======
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
@@ -46,5 +32,4 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
->>>>>>> 64a8768d9115ed025824798bdc162b80182e3c44
 }
