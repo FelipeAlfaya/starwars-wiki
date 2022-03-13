@@ -1,1 +1,47 @@
+<<<<<<< HEAD
 <p>header works!</p>
+=======
+<div id="header" class="py-6 block w-full">
+  <div
+    id="container"
+    class="flex justify-start bg-white items-center w-full max-w-7xl mx-auto px-3"
+  >
+    <div id="logo" class="flex-shrink-0 flex items-center">
+      <a [routerLink]="''">
+        <img
+          class="block w-auto mr-6"
+          src="assets/icons/swiki-logo.svg"
+          alt="swiki-logo"
+        />
+      </a>
+    </div>
+    <nav id="navbar" class="flex-1">
+      <div class="flex space-x-4">
+        <ng-template ngFor let-link [ngForOf]="navlinks">
+          <a
+            [routerLink]="link.path"
+            class="capitalize text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-lg font-medium"
+            [ngClass]="{ 'bg-gray-200': currentRoute === '/' + link.path }"
+            >{{ link.text }}</a
+          >
+        </ng-template>
+        <a
+          href="https://github.com/lukearch"
+          target="_blank"
+          class="capitalize text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-lg font-medium"
+          >Github</a
+        >
+      </div>
+    </nav>
+    <div id="wookie-api-logo" class="flex-shrink-0 flex items-center ml-6">
+      <a href="https://wookieapi.vercel.app" target="_blank">
+        <img
+          class="block w-auto"
+          src="assets/icons/wookieapi-logo.svg"
+          alt="wookie-api-logo"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+>>>>>>> 64a8768d9115ed025824798bdc162b80182e3c44

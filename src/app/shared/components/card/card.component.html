@@ -1,0 +1,39 @@
+<div
+  [id]="'card--' + removeWhitespaces(data?.name!)"
+  class="card w-52 h-72 bg-gray-400 flex rounded-lg overflow-hidden relative"
+  (mouseleave)="shrinkInformations()"
+>
+  <div
+    class="image-shadow absolute opacity-0 w-full h-full top-0 bg-black bg-opacity-40 z-10"
+  ></div>
+  <div
+    class="image w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover bg-center"
+    [style.backgroundImage]="'url(' + data?.image + ')'"
+  ></div>
+  <div
+    class="name w-full h-12 items-center justify-center flex absolute bottom-0 opacity-100 bg-black bg-opacity-50"
+  >
+    <p class="text-white">{{ data?.name }}</p>
+  </div>
+  <div
+    class="arrow absolute bottom-0 w-full flex justify-center items-center h-12"
+  >
+    <img
+      src="assets/icons/arrow-up.svg"
+      alt=""
+      class="w-auto h-auto z-50"
+      (click)="expandInformations()"
+    />
+  </div>
+  <div
+    class="expanded-info absolute opacity-0 w-full h-full p-4 pb-16 z-30 text-sm"
+  >
+    <div class="w-full h-full relative">
+      <button
+        class="w-full bg-blue-400 text-white absolute bottom-0 p-2 rounded-sm hover:bg-blue-500"
+      >
+        Ver mais
+      </button>
+    </div>
+  </div>
+</div>

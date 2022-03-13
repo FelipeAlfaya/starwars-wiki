@@ -1,1 +1,55 @@
-<p>home works!</p>
+<div id="container" class="max-w-7xl mx-auto px-3 flex flex-col">
+  <h1 class="text-5xl font-extrabold text-gray-800 antialiased">
+    Seja bem-vindo à Star Wiki!
+  </h1>
+  <div id="introduction" class="mt-5">
+    <p class="text-gray-800 font-medium block">
+      Aqui você encontrará uma grande variedade de dados à respeito de Star Wars
+      e seus personagens, planetas, veículos, espécies e assim por diante.
+    </p>
+  </div>
+  <div id="characters" class="my-6">
+    <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
+      Personagens
+    </h2>
+    <swiper
+      class="data-carousel flex"
+      [slidesPerView]="'auto'"
+      [spaceBetween]="24"
+      [navigation]="true"
+    >
+      <ng-template
+        swiperSlide
+        *ngFor="let character of characters; let i = index"
+        class="w-auto"
+      >
+        <app-card [data]="character" [id]="i"></app-card>
+      </ng-template>
+    </swiper>
+  </div>
+  <div id="planets" class="my-6">
+    <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
+      Planetas
+    </h2>
+    <swiper
+      class="data-carousel flex"
+      [slidesPerView]="'auto'"
+      [spaceBetween]="24"
+      [navigation]="true"
+    >
+      <ng-template
+        swiperSlide
+        *ngFor="let planet of planets; let i = index"
+        class="w-auto"
+      >
+        <app-card [data]="planet" [id]="i"></app-card>
+      </ng-template>
+    </swiper>
+  </div>
+  <div class="my-6 h-64">
+    <div
+      class="w-full h-full bg-center bg-no-repeat bg-cover"
+      [style.backgroundImage]="'url(assets/bg/bg-2.jpg)'"
+    ></div>
+  </div>
+</div>
