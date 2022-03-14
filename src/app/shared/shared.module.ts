@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
+import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
-  declarations: [HeaderComponent, CardComponent],
-  exports: [HeaderComponent, CardComponent],
-  imports: [CommonModule, RouterModule],
+  declarations: [HeaderComponent, CardComponent, CardCarouselComponent],
+  exports: [HeaderComponent, CardComponent, CardCarouselComponent],
+  imports: [CommonModule, RouterModule, SwiperModule],
 })
 export class SharedModule {}

@@ -12,44 +12,36 @@
     <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
       Personagens
     </h2>
-    <swiper
-      class="data-carousel flex"
-      [slidesPerView]="'auto'"
-      [spaceBetween]="24"
-      [navigation]="true"
-    >
-      <ng-template
-        swiperSlide
-        *ngFor="let character of characters; let i = index"
-        class="w-auto"
-      >
-        <app-card [data]="character" [id]="i"></app-card>
-      </ng-template>
-    </swiper>
+    <app-card-carousel [data]="characters"></app-card-carousel>
   </div>
   <div id="planets" class="my-6">
     <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
       Planetas
     </h2>
-    <swiper
-      class="data-carousel flex"
-      [slidesPerView]="'auto'"
-      [spaceBetween]="24"
-      [navigation]="true"
-    >
-      <ng-template
-        swiperSlide
-        *ngFor="let planet of planets; let i = index"
-        class="w-auto"
-      >
-        <app-card [data]="planet" [id]="i"></app-card>
-      </ng-template>
-    </swiper>
+    <app-card-carousel [data]="planets"></app-card-carousel>
   </div>
   <div class="my-6 h-64">
     <div
       class="w-full h-full bg-center bg-no-repeat bg-cover"
       [style.backgroundImage]="'url(assets/bg/bg-2.jpg)'"
     ></div>
+  </div>
+  <div id="species" class="my-6">
+    <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
+      Espécies
+    </h2>
+    <app-card-carousel [data]="species"></app-card-carousel>
+  </div>
+  <div id="vehicles" class="my-6">
+    <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
+      Veículos
+    </h2>
+    <app-card-carousel [data]="vehicles"></app-card-carousel>
+  </div>
+  <div id="films" class="my-6">
+    <h2 class="text-4xl font-extrabold text-gray-800 antialiased mb-5">
+      Filmes
+    </h2>
+    <app-card-carousel [data]="films"></app-card-carousel>
   </div>
 </div>

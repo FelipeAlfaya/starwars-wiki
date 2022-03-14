@@ -1,0 +1,10 @@
+<swiper
+  class="data-carousel flex"
+  [slidesPerView]="'auto'"
+  [spaceBetween]="24"
+  [navigation]="true"
+>
+  <ng-template swiperSlide *ngFor="let item of data" class="w-auto">
+    <app-card [data]="item"></app-card>
+  </ng-template>
+</swiper>
